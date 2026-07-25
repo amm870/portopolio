@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Deden</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* NAVBAR */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav h2 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            transition: 0.3s;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffdd88;
+        }
+
+        /* HAMBURGER */
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* RESPONSIVE NAV */
+        @media (max-width: 768px) {
+            nav ul {
+                position: absolute;
+                top: 70px;
+                right: 0;
+                background: rgba(0,0,0,0.4);
+                backdrop-filter: blur(15px);
+                flex-direction: column;
+                width: 200px;
+                padding: 20px;
+                border-radius: 10px;
+                display: none;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero img {
+            width: 170px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.7);
+            box-shadow: 0 0 25px rgba(255,255,255,0.5);
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .hero img:hover {
+            transform: scale(1.07);
+            box-shadow: 0 0 40px rgba(255,255,255,0.8);
+        }
+
+        .hero h1 {
+            font-size: 45px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* SECTIONS */
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(255,255,255,0.12);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            animation: fade 1s ease;
+        }
+
+        h2.section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border-left: 6px solid #ffdd88;
+            padding-left: 15px;
+        }
+
+        p, li {
+            font-size: 16px;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        /* PROJECT CARDS */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            background: rgba(255,255,255,0.18);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+        }
+
+        /* CONTACT */
+        .contact a {
+            color: #ffdd88;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <h2>Deden</h2>
+
+        <!-- HAMBURGER BUTTON -->
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+        <ul id="menu">
+            <li><a href="#about">Profil</a></li>
+            <li><a href="#skills">Keahlian</a></li>
+            <li><a href="#exp">Pengalaman</a></li>
+            <li><a href="#projects">Projek</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- JS UNTUK HAMBURGER -->
+    <script>
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("show");
+        }
+    </script>
+
+    <!-- HERO -->
+    <div class="hero">
+        <img src="c:\Users\Malik\OneDrive\Pictures\Roblox\RobloxScreenShot20250824_120109928.png" alt="Foto Malik">
+        <h1>Halo, Saya Malik</h1>
+        <p>Pelajar aktif • Suka tantangan • Bersemangat mencoba hal baru</p>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <h2 class="section-title">Profil</h2>
+        <p>Saya seorang pelajar nama saya Malik saya sekolah di pondok pesantren al-ittihad</p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <h2 class="section-title">Keahlian</h2>
+        <ul>
+            <li>Lari dan aktivitas fisik</li>
+            <li>Mencoba hal-hal baru</li>
+            <li>Kerja sama tim</li>
+            <li>Disiplin dan manajemen waktu</li>
+        </ul>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="exp">
+        <h2 class="section-title">Pengalaman</h2>
+        <p><b>Pramuka</b> — Mengembangkan ...</p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <h2 class="section-title">Projek</h2>
+
+        <div class="projects">
+            <div class="card"><h3>Projek Aktivitas Fisik</h3><p>Melatih lari...</p></div>
+            <div class="card"><h3>Eksplorasi Skill Baru</h3><p>Mencoba kegiatan...</p></div>
+            <div class="card"><h3>Kegiatan Pramuka</h3><p>Mengikuti kegiatan...</p></div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Kontak</h2>
+        <p>Email: <a href="mailto:malgaming383@gmail.com">malgaming383@gmail.com</a></p>
+        <p>Instagram: <a href="#">(@amm_akm)</a></p>
+    </section>
+
+    <section id="Alamat" class="Alamat">
+        <h2 class="section-title">Alamat sekolah</h2>
+        <p>jl.raya.bandung. km.03..karangtengah.cianjur</p>
+    </section>
+</body>
+</html>
